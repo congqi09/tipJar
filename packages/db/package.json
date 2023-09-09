@@ -1,0 +1,29 @@
+{
+  "name": "@tip_jar/db",
+  "version": "0.1.0",
+  "main": "./dist/index.js",
+  "types": "./index.ts",
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules",
+    "build": "pnpm with-env tsc",
+    "dev": "pscale connect crypo-tip-jar dev --port 3309 --org qi-co",
+    "db:generate": "pnpm with-env prisma generate",
+    "db:push": "pnpm with-env prisma db push --skip-generate",
+    "db:format": "pnpm with-env prisma format",
+    "studio": "pnpm with-env prisma studio",
+    "postinstall": "prisma generate",
+    "with-env": "dotenv -e ../../.env --"
+  },
+  "prisma": {
+    "seed": "tsx prisma/seed.ts"
+  },
+  "dependencies": {
+    "@prisma/client": "^5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.3.3",
+    "dotenv-cli": "^7.2.1",
+    "prisma": "^5.0.0",
+    "typescript": "^5.1.3"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "dist",
+    "lib": ["ES2019", "DOM", "ES2021.String"],
+    "isolatedModules": false,
+    "noEmit": false
+  },
+  "include": ["src", "index.ts"]
+}

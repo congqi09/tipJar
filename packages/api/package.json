@@ -1,0 +1,40 @@
+{
+  "name": "@tip_jar/api",
+  "version": "0.0.0",
+  "main": "./dist/index.js",
+  "types": "./index.ts",
+  "engines": {
+    "node": ">=v18.16.1"
+  },
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules",
+    "lint": "eslint .",
+    "lint:fix": "pnpm lint --fix",
+    "type-check": "tsc --noEmit",
+    "build": "pnpm with-env tsc",
+    "dev": "cross-env PORT=3001 pnpm with-env tsx watch src/wssDevServer.ts",
+    "with-env": "dotenv -e ../../.env --"
+  },
+  "dependencies": {
+    "@tip_jar/db": "*",
+    "@trpc/client": "^10.32.0",
+    "@trpc/server": "^10.32.0",
+    "axios": "^1.4.0",
+    "dotenv": "^16.3.1",
+    "events": "^3.3.0",
+    "jsonic": "^1.0.1",
+    "superjson": "^1.12.3",
+    "tsx": "^3.12.7",
+    "ws": "^8.0.0",
+    "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "@types/jsonic": "^0.3.1",
+    "@types/node": "^20.3.1",
+    "@types/ws": "^8.2.0",
+    "cross-env": "^7.0.3",
+    "dotenv-cli": "^7.2.1",
+    "eslint": "^8.42.0",
+    "typescript": "^5.1.3"
+  }
+}
